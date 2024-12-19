@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block body %}
+      <header id="index-header">
+        <nav class="navbar navbar-expand-sm">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <img src="/static/Logo.jpg" alt="Logo" style="width:50px;" class="rounded-pill"> 
+              Yuki Store
+            </a>
+            <form>
+              <div class="input-group rounded-pill">
+                <input class="form-control" type="text" placeholder="Search For Me">
+                <button class="btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav m-2">
+              {% if user %}
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/">Welcome, {{ user[0]['account']}}</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/logout">Log Out</a>
+              </li>
+              {% else %}
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/login">Log In</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              {% endif %}
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/collection">Collections</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/transaction">Transactions</a>
+              </li>
+              <li class="nav-item" style="margin-right: 15px;">
+                <a class="nav-link" href="/help">Help</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main id="index-main">
+        <div class="d-flex introduce">
+          <div id="slide" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#slide" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#slide" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/Carousel/Carousel0.jpg" alt="Image Error" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/Carousel/Carousel1.jpg" alt="Image Error" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/Carousel/Carousel2.jpg" alt="Image Error" class="d-block w-100">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slide" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slide" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+          <div class="ms-auto description">
+            <h1>Easy Solution For Gardening</h1>
+            <div class="container-fluid">
+              <h3 style="margin-top: 5px;">Hello World</h3>
+              <h3>Hello World</h3>
+              <h3>Hello World</h3>
+              <h3>Hello World</h3>
+            </div>
+          </div>
+        </div>
+        <div class="container top-sales">
+          <h2>Top Sales</h2>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="flex-item" style="margin-left: 15px;">
+            <div class="card">
+              <img class="card-img-top" src="/static/Collection/item/ITEM001/ITEM001.jpg" alt="Image Error">
+              <div class="card-body">
+                <h4 class="card-title">ITEM001</h4>
+                <p class="card-text">Best selling product ranked #1! &#128293;</p>
+                <div class="card-button">
+                  <a href="/item/ITEM001" class="btn">See More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="card">
+              <img class="card-img-top" src="/static/Collection/item/ITEM002/ITEM002.jpg" alt="Image Error">
+              <div class="card-body">
+                <h4 class="card-title">ITEM002</h4>
+                <p class="card-text">Best selling product ranked #2! &#128293;</p>
+                <div class="card-button">
+                  <a href="/item/ITEM002" class="btn">See More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="card">
+              <img class="card-img-top" src="/static/Collection/item/ITEM003/ITEM003.jpg" alt="Image Error">
+              <div class="card-body">
+                <h4 class="card-title">ITEM003</h4>
+                <p class="card-text">Best selling product ranked #3! &#128293;</p>
+                <div class="card-button">
+                  <a href="/item/ITEM003" class="btn">See More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+{% endblock %}

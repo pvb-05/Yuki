@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Help
+{% endblock %}
+
+{% block body %}
+    <div id="help" class="d-flex justify-content-center align-items-center">
+        <form action="/help" method="post">
+            <div class="d-flex justify-content-center" style="margin-bottom: 40px; margin-top: 30px;">
+                <h1>Help</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>Please contact me using the tools below if you need help !</p>
+            </div>
+            <div style="margin-top: 30px;">
+                <p>
+                    Facebook:  <a href="https://www.facebook.com/bac.phanvan.5494">Phan Văn Bắc</a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Gmail:  <a href="mailto:phanvanbac15112005@gmail.com">phanvanbac15112005@gmail.com</a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Instagram:  <a href="https://www.instagram.com/_pvb_05/?igsh=MTd6MDFzNndkNTZrOA%3D%3D">_pvb_05</a>
+               </p>
+            </div>
+            <div>
+                <p>
+                   Note: The new website is in testing phase, if there are any errors, please give your comments.
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>
+                    Thanks You!
+                </p>
+            </div>
+            <div class="mb-3 d-flex justify-content-center nut" style="margin-top: 40px;">
+                <a href="/" class="btn">
+                    <h6>Ok, I get it!</h6>
+                </a>
+            </div>  
+        </form>
+    </div>
+{% endblock %}

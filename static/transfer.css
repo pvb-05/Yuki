@@ -1,0 +1,53 @@
+#transfer{
+    background-image: url("/static/backgroundtransfer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; 
+    height: 100vh;
+}
+
+#transfer div.transfer-image{
+    width: 500px; 
+    height: 500px; 
+    object-fit: cover;
+    margin-left: 80px;
+    margin-right: 150px;
+}
+
+#transfer div.transfer-image img{
+    border-radius: 20px;
+}
+
+#transfer form{
+    border-radius: 5%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    padding: 40px;
+}
+
+#transfer form div label{
+    margin-left: 8px;
+}
+
+#transfer form div input:focus{
+    border-style: none;
+    box-shadow: none;
+}
+
+#transfer form div button{
+    width: 100px;
+    background-color: bisque;
+}
+
+#transfer form div button:focus{
+    border-style: none;
+}
+
+#transfer form:hover, #transfer form:active{
+    transform: scale(1.05);
+}
+
+#transfer input[readonly] {
+    background-color: #e9ecef; /* Màu nền nhạt giống disabled */
+    cursor:not-allowed;      /* Con trỏ không được phép */
+}

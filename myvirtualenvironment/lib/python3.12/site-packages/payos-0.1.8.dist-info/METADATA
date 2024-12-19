@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: payos
+Version: 0.1.8
+Summary: A library for create Payment Link of payOS and more
+Author: Casso
+Author-email: hieunt@casso.vn, khanhnm@casso.vn
+Keywords: payos,vietqrpro,payos-python,vietqr,payos,qr-pay,vietnam-banks
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests

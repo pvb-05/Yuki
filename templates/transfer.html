@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transfer
+{% endblock %}
+
+{% block body %}
+    <div id="transfer" class="d-flex justify-content-center align-items-center">
+        <div class="d-flex transfer-image">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="container mt-3">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            <img src="/static/Collection/item/{{item[0]['id']}}/{{item[0]['id']}}.jpg" alt="{{item[0]['id']}}">
+        </div>
+        <form action="/transfer/{{item[0]['id']}}" method="post">
+            <div class="d-flex justify-content-center" style="margin-bottom: 20px;">
+                <h1>Order</h1>
+            </div>
+            <div class="mb-3">
+                <label for="account"><h6>Account</h6></label>
+                <input class="form-control mx-auto w-auto" id="account" type="text" name="account" value="{{user[0]['account']}}" size="50" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="email"><h6>Email</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="email" name="email" value="{{user[0]['email']}}" size="50" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="address"><h6>Address</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="address" name="address" placeholder="write your address in here" autocomplete="off" size="50" pattern="[a-z0-9A-Z-/]*" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone"><h6>Phone</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="phone" name="phone" placeholder="write your phone in here" autocomplete="off" size="50" pattern="[0-9]*" maxlength="10" required>
+            </div>
+            <div class="mb-3">
+                <label for="code-item"><h6>Code item</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="code-item" name="code_item" value="{{item[0]['id']}} | {{item[0]['name']}}" size="50" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="price"><h6>Price</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="price" name="price" value="{{item[0]['price']}}" size="50" readonly>
+            </div>
+            <div class="mb-3 d-flex justify-content-center" style="margin-top: 30px;">
+                <button id="submit" class="btn" type="submit">
+                    <h6>Pay</h6> 
+                </button>
+            </div>  
+        </form>
+    </div>
+    <script defer>
+        document.getElementById('submit').addEventListener('click', 
+            async function(e) {
+                e.preventDefault(); // Ngăn chặn form submit mặc định
+                const formData = new FormData(document.querySelector("form"));
+                const response = await fetch("/transfer/{{item[0]['id']}}", {
+                    method: 'POST',
+                    body: formData
+                });
+                const payment = await response.json();
+                window.open(payment.checkoutUrl, '_blank');
+    });
+    </script>
+{% endblock %}

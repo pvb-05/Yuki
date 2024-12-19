@@ -1,0 +1,91 @@
+#index-header nav div.input-group{
+    width: 400px; 
+}
+
+#index-header nav div.input-group input.form-control{
+    border: none; 
+    border-top-left-radius: 20px;    
+    border-bottom-left-radius: 20px;
+    background-color:#ffffff;
+}
+
+#index-header nav div.input-group input.form-control:focus{
+    box-shadow: none;
+}
+
+#index-header nav div.input-group button{
+    background-color: #ffffff; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#index-header nav div.input-group button:focus{
+    border-style: none;
+}
+
+#index-main .introduce{
+    margin-top: 4%;
+}
+
+#index-main .introduce div.carousel{
+    width:400px; 
+    height: 268px; 
+    margin-left: 6%; 
+    margin-top:5px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#index-main .introduce div.carousel .carousel-inner img {
+    border-radius: 20px;
+}
+
+#index-main .introduce .description{
+    margin-right:50px;
+}
+
+#index-main .introduce .description h1{
+    font-size: 60px;
+    margin-right: 4px;;
+}
+
+#index-main .top-sales{
+    margin-top: 2%; 
+    margin-bottom: 2%;
+}
+
+#index-main .top-sales h2{
+    margin-top:7px; 
+    padding: 5px; 
+    text-align: center; 
+    background-color: #ebded4;
+    border-radius: 15px;
+}
+
+#index-main .card{
+    width:400px;
+}
+
+#index-main .card .card-title{
+    text-align: center;
+}
+
+#index-main .card .card-text{
+    text-align: center;
+}
+
+#index-main .card .card-button{
+    display: flex; 
+    justify-content: center;
+}
+
+#index-main .card .card-button a{
+    width: 130px;
+    background-color:#d1c8c1;
+}
+
+#index-main .card .card-button a:focus{
+    background-color: #d1c8c1; 
+    color: black; 
+    border-style: none;
+}

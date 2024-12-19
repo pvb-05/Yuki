@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+
+    <div id="register" class="d-flex justify-content-center align-items-center">
+        <form action="/register" method="post">
+            <div class="d-flex justify-content-center" style="margin-bottom: 40px; margin-top: 20px;">
+                <h1>Register</h1>
+            </div>
+            <div class="mb-3">
+                <label for="account"><h6>Account</h6></label>
+                <input class="form-control mx-auto w-auto" id="account" type="text" name="account" placeholder="Account" autocomplete="off" size="50" minlength="10" maxlength="40" pattern="[a-z0-9_]*" required>
+            </div>
+            <div class="mb-3">
+                <label for="email"><h6>Email</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="email" name="email" placeholder="Email" autocomplete="off" size="50" minlength="10" maxlength="40" pattern="^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required>
+            </div>
+            <div class="mb-3">
+                <label for="password"><h6>Password</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="password" name="password" placeholder="Password" autocomplete="off" size="50" minlength="10" maxlength="40" pattern="[a-z0-9_]*" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm"><h6>Confirm Password</h6></label>
+                <input class="form-control mx-auto w-auto" type="text" id="confirm" name="confirm" placeholder="Confirm Password" autocomplete="off" size="50" minlength="10" maxlength="40" pattern="[a-z0-9_]*" required>
+            </div>  
+            <div>
+                <p style="font-weight: 600;">☛☛ Note: </p>
+                    <p>1. Only lowercase letters or numbers are accepted.</p>
+                    <p>2. Minimum number of characters is 10 and maximum is 40.</p>
+            </div>
+            <div class="mb-3 d-flex justify-content-center" style="margin-top: 30px;">
+                <button class="btn" type="submit">
+                    <h6>Register</h6>
+                </button> 
+            </div>  
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Pay Fail 
+{% endblock %}
+
+{% block body %}
+    <div class="cancel"></div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 5000); // 5000ms = 5 giây
+    </script>
+{% endblock %}

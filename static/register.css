@@ -1,0 +1,41 @@
+#register{
+    background-image: url("/static/backgroundregister.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; 
+    height: 100vh;
+}
+
+#register form{
+    border-radius: 5%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    padding: 40px;
+}
+
+#register form div label{
+    margin-left: 8px;
+}
+
+#register form div button{
+    width: 100px;
+    background-color: bisque;
+}
+
+#register form div button:focus{
+    border-style: none;
+}
+
+#register form div input{
+   border-radius: 20px;    
+}
+
+#register form div input:focus{
+    box-shadow: none;
+    border-style: none;
+}
+
+#register form:hover, #register form:active{
+    transform: scale(1.05);
+}
+

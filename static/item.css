@@ -1,0 +1,104 @@
+#item-header nav div.input-group{
+    width: 400px; 
+}
+
+#item-header nav div.input-group input.form-control{
+    border: none; 
+    border-top-left-radius: 20px;    
+    border-bottom-left-radius: 20px;
+    background-color:#ffffff;
+}
+
+#item-header nav div.input-group input.form-control:focus{
+    box-shadow: none;
+}
+
+#item-header nav div.input-group button{
+    background-color: #ffffff; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#item-header nav div.input-group button:focus{
+    border-style: none;
+}
+
+#item-main div.item-name{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+}
+
+#item-main div.item-name{
+    font-weight: 700;
+    font-size: 39.5pt;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    padding-top: none;
+    padding-bottom: none;
+}
+
+#item-main div.item-image{
+    width: 500px; 
+    height: 500px; 
+    object-fit: cover;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#item-main div.item-image img{
+    border-radius: 20px;
+}
+
+#item-main div.item-detail{
+    width: 500px;
+}
+
+#item-main div.item-detail div.describe{
+    height: 110px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#item-main div.item-detail div.describe1{
+    height: 110px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-style: none ;
+    background-color: #ebded4;
+}
+
+#item-main div.item-detail div.describe2{
+    height: 110px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-style: none ;
+    background-color: #c47f38;
+}
+
+#item-main div.item-detail div.describe2 a.chuyenkhoan{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#item-main div.item-detail div.describe2 #chuyenkhoan:hover{
+    transform: scale(1.2);
+}
+
+#item-main div.item-detail div.describe2 a.tienmat{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#item-main div.item-detail div.describe2 #tienmat:hover{
+    transform: scale(1.2);
+}
+
+
+
+

@@ -1,0 +1,51 @@
+#transaction-header nav div.input-group{
+    width: 400px; 
+}
+
+#transaction-header nav div.input-group input.form-control{
+    border: none; 
+    border-top-left-radius: 20px;    
+    border-bottom-left-radius: 20px;
+    background-color:#ffffff;
+}
+
+#transaction-header nav div.input-group input.form-control:focus{
+    box-shadow: none;
+}
+
+#transaction-header nav div.input-group button{
+    background-color: #ffffff; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#transaction-header nav div.input-group button:focus{
+    border-style: none;
+}
+
+#transaction-main div{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#transaction-main div.transaction-history{
+    margin-top: 80px;
+    background-color: #ebded4;
+    border-radius: 15px;
+}
+
+#transaction-main div.transaction-history p{
+    font-weight: 500;
+    font-size: 25pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#transaction-main table tbody tr td img{
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 25px;
+    width: 100%;
+}
