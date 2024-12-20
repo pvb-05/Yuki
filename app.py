@@ -1,14 +1,14 @@
 import os
 from dotenv import load_dotenv
 import random
-from payos import PaymentData, ItemData, PayOS
+from payos import PaymentData, PayOS
 
 from functools import wraps
 from flask_bcrypt import Bcrypt, check_password_hash
 from flask import Flask, flash, render_template, request, redirect, session, jsonify
 from cs50 import SQL
 from flask_session import Session
-
+ 
 # Cấu hình ứng dụng
 app = Flask(__name__, static_folder='static',static_url_path='/static',template_folder='templates')
 
@@ -42,7 +42,6 @@ def login_required(f):
 
     https://flask.palletsprojects.com/en/latest/patterns/viewdecorators/
     """
-
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
@@ -51,9 +50,12 @@ def login_required(f):
     return decorated_function
 
 def get_user():
-    if session['user_id']:
-        return db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
-
+    if session.get("user_id"):
+        user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+        if user:
+            return user[0]  # Trả về thông tin người dùng
+        session.clear()  # Xóa phiên nếu không tìm thấy người dùng
+    return None
 
 def get_items(item_id=None):
     if item_id:
