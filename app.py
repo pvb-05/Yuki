@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import random
 from payos import PaymentData, PayOS
 
+import uuid
 from functools import wraps
 from flask_bcrypt import Bcrypt, check_password_hash
 from flask import Flask, flash, render_template, request, redirect, session, jsonify
@@ -121,8 +122,9 @@ def register():
             if existing_user:
                 return render_template("register.html")
             else:
+                unique_uuid = "YUKI" + str(uuid.uuid4())[:8]
                 password = bcrypt.generate_password_hash(password).decode('utf-8')
-                db.execute("INSERT INTO users(account,email,password) VALUES(?,?,?)", account,gmail,password)
+                db.execute("INSERT INTO users(id, account,email,password) VALUES(?,?,?,?)", unique_uuid, account,gmail,password)
                 return redirect("/")
     
 @app.route("/help", methods=["GET", "POST"])
