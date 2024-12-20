@@ -183,7 +183,7 @@ def transfer(item_id):
             flash("Invalid price format.", "danger")
             return redirect(f"/transfer/{item_id}")
         
-        domain = "http://127.0.0.1:5000"
+        domain = "https://yuki-glhj.onrender.com"
         try:
             paymentData = PaymentData(orderCode=random.randint(1000, 999999), 
                                       amount=price,
