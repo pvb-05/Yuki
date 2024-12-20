@@ -12,10 +12,10 @@
               <img src="/static/Logo.jpg" alt="Logo" style="width:50px;" class="rounded-pill"> 
               Yuki Store
             </a>
-            <form>
+            <form action="/search" method="get">
               <div class="input-group rounded-pill">
-                <input class="form-control" type="text" placeholder="Search For Me">
-                <button class="btn">
+                <input class="form-control" type="text" placeholder="Search For Me" name="q">
+                <button class="btn" type="submit">
                   <i class="fas fa-search"></i>
                 </button>
               </div>
@@ -127,4 +127,24 @@
           </div>
         </div>
       </main>
+      <script>
+        document.getElementById("search-box").addEventListener("input", function() {
+    const query = this.value;
+
+    if (query.length > 0) {
+        fetch(`/search?q=${query}`)
+            .then(response => response.json())
+            .then(suggestions => {
+                const suggestionBox = document.getElementById("suggestions");
+                suggestionBox.innerHTML = "";
+                suggestions.forEach(item => {
+                    const div = document.createElement("div");
+                    div.textContent = item;
+                    suggestionBox.appendChild(div);
+                });
+            })
+            .catch(error => console.error("Error:", error));
+    }
+});
+      </script>
 {% endblock %}

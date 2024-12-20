@@ -1,0 +1,92 @@
+#collection_search-header nav div.input-group{
+    width: 400px; 
+}
+
+#collection_search-header nav div.input-group input.form-control{
+    border: none; 
+    border-top-left-radius: 20px;    
+    border-bottom-left-radius: 20px;
+    background-color:#ffffff;
+}
+
+#collection_search-header nav div.input-group input.form-control:focus{
+    box-shadow: none;
+}
+
+#collection_search-header nav div.input-group button{
+    background-color: #ffffff; 
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#collection_search-header nav div.input-group button:focus{
+    border-style: none;
+}
+
+#collection_search-main div{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#collection_search-main  div.collection-today{
+    margin-top: 80px;
+    background-color: #ebded4;
+    border-radius: 15px;
+}
+
+#collection_search-main  div.collection-today p{
+    font-weight: 500;
+    font-size: 25pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#collection_search-main div.item-card{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    padding: 0%;
+}
+
+#collection_search-main  div.card{
+    width: 15rem;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#collection_search-main div.card:hover, #collection_search-main div.card:active{
+    transform: scale(1.05);
+}
+
+#collection_search-main div.card-body{
+    margin: auto;
+}
+
+#collection_search-main div.card-body div{
+    margin-top: 0%;
+}
+
+#collection_search-main div.card-body a{
+    background-color:#d1c8c1;
+}
+
+#collection_search-main div.card-body a:focus{
+    outline: none;
+    border-style: none;
+}
+
+#collection_search-main div.card-body p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#collection_search-main .card .card-title{
+    text-align: center;
+}
+
+#collection_search-main .card .card-text{
+    text-align: center;
+}
+

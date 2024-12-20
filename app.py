@@ -1,8 +1,8 @@
 import os
 from dotenv import load_dotenv
-
 import random
 from payos import PaymentData, ItemData, PayOS
+
 from functools import wraps
 from flask_bcrypt import Bcrypt, check_password_hash
 from flask import Flask, flash, render_template, request, redirect, session, jsonify
@@ -266,6 +266,27 @@ def transaction():
     transactions = db.execute("SELECT transactions.id AS transaction_id, transactions.order_code, transactions.pay, transactions.status, datetime(transactions.transaction_date, '+7 hours') AS transaction_date, items.id AS item_id, items.name AS item_name, items.price AS item_price FROM transactions JOIN items ON transactions.item_id = items.id WHERE transactions.user_id = ? ORDER BY transactions.transaction_date DESC", user[0]['id'])
     return render_template("transaction.html", user=user, transactions=transactions)
 
+@app.route('/search', methods=['GET'])
+@login_required
+def search():
+    user = get_user()
+    query = request.args.get('q', '').lower()
+
+    if not query:
+        flash("Search query cannot be empty.", "danger")
+        return redirect("/")
+    
+    items = db.execute("SELECT * FROM items WHERE LOWER(name) LIKE ?", f'%{query}%')
+
+    if len(items) == 1:
+        return redirect(f"/item/{items[0]['id']}")
+    elif len(items) > 1:
+        return render_template("/collection_search.html",user=user,items=items)
+    else:
+        # Nếu không tìm thấy kết quả
+        flash("No items found matching your search.", "info")
+        return redirect("/") 
+    
 if __name__ == "__main__":
     app.run(debug = True)
 
