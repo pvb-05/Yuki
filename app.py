@@ -53,7 +53,7 @@ def get_user():
     if session.get("user_id"):
         user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
         if user:
-            return user[0]  # Trả về thông tin người dùng
+            return user  # Trả về thông tin người dùng
         session.clear()  # Xóa phiên nếu không tìm thấy người dùng
     return None
 
